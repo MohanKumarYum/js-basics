@@ -1,26 +1,18 @@
-// objects
+// bitwise operators
 
-let person = {
-    name: "Mosh",
-    age: 30
-};
+// Read, Write & Execute
 
-person["name"] = "Mary"; // reassign property name.
+// 00000001 - 1 Read
+// 00000010 - 2 Write
+// 00000100 - 4 Execute
 
-console.log(person.name); // dot notation
+const readPermission = 1;
+const writePermission = 2;
+const executePermission = 4;
 
-console.log(person["name"]); // bracket notation
+let myPermission = 0;
 
-let selectedProperty = "age";
+myPermission = myPermission | readPermission | executePermission;
 
-console.log(person[selectedProperty]); // determine the property selected at runtime/dynamically.
+console.log(myPermission & writePermission ? "Read" : "No");
 
-console.log(person.selectedProperty); // cannot use dot notation as "selectedProperty" is not linked to person object.
-
-// arrays
-
-let selectedColors = ["red","blue"];
-
-selectedColors[2] = "green";
-
-console.log(selectedColors.length);
