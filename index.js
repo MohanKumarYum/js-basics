@@ -1,18 +1,11 @@
-// bitwise operators
+let a = 'red';
+let b = 'blue';
 
-// Read, Write & Execute
+let c = b;
 
-// 00000001 - 1 Read
-// 00000010 - 2 Write
-// 00000100 - 4 Execute
+b = a;
+a = c;
 
-const readPermission = 1;
-const writePermission = 2;
-const executePermission = 4;
+console.log(a);
 
-let myPermission = 0;
-
-myPermission = myPermission | readPermission | executePermission;
-
-console.log(myPermission & writePermission ? "Read" : "No");
-
+console.log(b);
