@@ -1,17 +1,29 @@
-function sum(limit) {
+const array = [80, 80, 80];
 
-    const firstMultiple = 3;
-    const secondMultiple = 5;
-    const initialValue = 0
-    let sumMultiples3and5 = initialValue;
+console.log(calculateGrade(array));
 
-    for (let index = initialValue; index <= limit; index++) {
+function calculateGrade(marks) {
 
-        if (index % firstMultiple === initialValue || index % secondMultiple === initialValue )
-            sumMultiples3and5 += index;
-    }
+    const average = calculateAverage(marks);
     
-    return sumMultiples3and5
+    if (average <= 59) return "F";
+
+    if (average <= 69) return "D";
+
+    if (average <= 79) return "C";
+
+    if (average <= 89) return "B";
+
+    return grade = "A";
 }
 
-console.log(sum(6));
+function calculateAverage(array) {
+
+    let sum = 0;
+
+    for (const mark of array) {
+        sum += mark;
+    }
+
+    return (sum / array.length);
+}
