@@ -1,29 +1,11 @@
-const array = [80, 80, 80];
+showStars(1);
 
-console.log(calculateGrade(array));
+function showStars(rows) {
 
-function calculateGrade(marks) {
+    let stars = "";
 
-    const average = calculateAverage(marks);
-    
-    if (average <= 59) return "F";
-
-    if (average <= 69) return "D";
-
-    if (average <= 79) return "C";
-
-    if (average <= 89) return "B";
-
-    return grade = "A";
-}
-
-function calculateAverage(array) {
-
-    let sum = 0;
-
-    for (const mark of array) {
-        sum += mark;
+    for (let index = 1; index <= rows; index++) {
+        stars += "*";
+        console.log(stars);
     }
-
-    return (sum / array.length);
 }
