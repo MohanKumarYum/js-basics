@@ -1,14 +1,14 @@
-showNumbers(11);
+function countTruthy(array) {
 
-function showNumbers(limit) {
-    for (let index = 0; index <= limit; index++) {
+    let truthyCount = 0;
 
-        // if (index % 2 === 0) {
-        //     console.log(index, "Even");
-        // } else
-        //     console.log(index, "Odd");
-
-        const message = (index % 2 === 0) ? "Even" : "Odd";
-        console.log(index, message);
+    for (const iterator of array) {
+        if (iterator)
+            truthyCount++;
     }
+    return truthyCount;
 }
+
+const array = [0, null, undefined, "",2, 3];
+
+console.log(countTruthy(array));
