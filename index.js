@@ -1,14 +1,19 @@
-function countTruthy(array) {
+function showProperties(obj) {
 
-    let truthyCount = 0;
-
-    for (const iterator of array) {
-        if (iterator)
-            truthyCount++;
+    for (const key in obj) {
+        if (typeof obj[key] === "string") {
+            console.log(key, obj[key]);
+        }
     }
-    return truthyCount;
 }
 
-const array = [0, null, undefined, "",2, 3];
+const movie = {
 
-console.log(countTruthy(array));
+    title: "a",
+    releaseYear: 2018,
+    rating: 4.5,
+    director: "b",
+    comments: "This is boring."
+};
+
+showProperties(movie);
