@@ -1,11 +1,13 @@
-let a = 'red';
-let b = 'blue';
+let role = "hack";
 
-let c = b;
-
-b = a;
-a = c;
-
-console.log(a);
-
-console.log(b);
+switch (role) {
+    default:
+    console.log("Anonymous");
+        break;
+    case "guest":
+        console.log("Guest user");
+        break;
+    case "moderator":
+        console.log("Moderator user");
+        break;
+}
