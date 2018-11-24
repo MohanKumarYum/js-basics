@@ -1,30 +1,44 @@
-function fizzBuzz(input) {
-    if (typeof input !== "number" || input <= 0)
-        return NaN;
+function checkSpeed(input) {
+  const speedLimit = 70;
+  const kmPerPoint = 5;
+  const maxDemeritPoints = 12;
 
-    if ((input % 3 === 0 && input % 5 === 0))
-        return "FizzBuzz";
+  if (typeof input !== "number") return NaN;
 
-    if (input % 3 === 0)
-        return "Fizz";
+  if (input < speedLimit + kmPerPoint) return "Ok";
 
-    if (input % 5 === 0)
-        return "Buzz";
+  if (input > speedLimit) {
+    const demeritPoints = Math.floor((input - speedLimit) / kmPerPoint);
 
-    return input;
+    if (demeritPoints >= maxDemeritPoints) {
+      return "License Suspended";
+    }
+
+    return "Points: " + demeritPoints;
+  }
 }
 
-let output = fizzBuzz(false);
-console.log(output);
+console.log(checkSpeed("Hello"));
+console.log(checkSpeed(50));
+console.log(checkSpeed(70));
+console.log(checkSpeed(75));
+console.log(checkSpeed(76));
+console.log(checkSpeed(80));
+console.log(checkSpeed(84));
+console.log(checkSpeed(96));
+console.log(checkSpeed(125));
+console.log(checkSpeed(130));
 
-output = fizzBuzz(7);
-console.log(output);
 
-output = fizzBuzz(9);
-console.log(output);
+// Result
 
-output = fizzBuzz(15);
-console.log(output);
-
-output = fizzBuzz(-1);
-console.log(output);
+// NaN
+// Ok
+// Ok
+// Points: 1
+// Points: 1
+// Points: 2
+// Points: 2
+// Points: 5
+// Points: 11
+// License Suspended
