@@ -1,16 +1,12 @@
-function showPrimes(limit) {
+const address = {
+    street: "station",
+    city: "sydney",
+    postcode: 2000
+};
 
-    for (let number = 2; number <= limit; number++)
-        if (isPrime(number)) console.log(number);
+function showAddress(address) {
+    for (const key in address)
+        console.log(key, address[key]);
 }
 
-function isPrime(number) {
-
-    for (let factor = 2; factor < number; factor++)
-        if (number % factor === 0) 
-            return false;
-        
-    return true;
-}
-
-showPrimes(20);
+showAddress(address);
